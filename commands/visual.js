@@ -56,6 +56,7 @@ class VisualCmd extends Command {
         const embed2 = new Discord.RichEmbed()
             .setAuthor("Templates preview")
             .setDescription(`command : **-${title}**`)
+			.setImage(temp0samp)
             .setTimestamp()
             .setColor("#00c09b")
             .setFooter(`MemeMaker ©`);
@@ -73,6 +74,7 @@ class VisualCmd extends Command {
         const embed2 = new Discord.RichEmbed()
             .setAuthor("Templates preview")
             .setDescription(`command : **-${title}**`)
+			.setImage(temp0samp)
             .setTimestamp()
             .setColor("#00c09b")
             .setFooter(`MemeMaker ©`);
