@@ -3,11 +3,11 @@ const Discord = require("discord.js");
 const { Canvas } = require('canvas-constructor');
 const fsn = require('fs-nextra');
 
-class WowCmd extends Command {
+class RainbowCmd extends Command {
   constructor (client) {
     super(client, {
-      name: "wow",
-      description: "Makes a 'WOW' meme.",
+      name: "rainbow",
+      description: "Makes a 'rainbow' meme.",
       category: "Meme Maker",
       usage: "",
       enabled: true,
@@ -66,6 +66,8 @@ class WowCmd extends Command {
       .setColor('#000000')
       .setTextFont('bold 28px Impact')
       .setTextAlign('center')
+	  .setStrokeStyle = 'rgba(0,0,0,0.5)'
+	  .setStroke()
       .addText(topText, 215, 30)
       .addText(bottomText, 215, 270)
       .toBuffer();
@@ -73,8 +75,8 @@ class WowCmd extends Command {
     const attachment = new Discord.Attachment(newMeme, 'image.png');
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 100%`);
     await msg.delete();
-    message.channel.send("Your 'wow' meme is ready:", attachment);
+    message.channel.send("Your 'rainbow' meme is ready:", attachment);
   }
 }
 
-module.exports = WowCmd;
+module.exports = RainbowCmd;
