@@ -26,7 +26,7 @@ class VisualCmd extends Command {
 		    var tempsamp = fs.readFileSync('templatessample.txt').toString().split("\n");
             var titles = fs.readFileSync('templates.txt').toString().split("\n");
 	    	var title = titles[i-1]
-			var temp0samp = tempsamptitles[i-1]
+			var temp0samp = tempsamp[i-1]
         const embed = new Discord.RichEmbed()
             .setAuthor("Templates preview")
             .setDescription(`command : **-${title}**`)
@@ -49,10 +49,10 @@ class VisualCmd extends Command {
 		  
 				  if( i === 59 ) i = 0;
 				i += 1;
-				var tempsamp = fs.readFileSync('templatessample.txt').toString().split("\n");
+			var tempsamp = fs.readFileSync('templatessample.txt').toString().split("\n");
             var titles = fs.readFileSync('templates.txt').toString().split("\n");
 	    	var title = titles[i-1]
-			var temp0samp = tempsamptitles[i-1]
+			var temp0samp = tempsamp[i-1]
         const embed2 = new Discord.RichEmbed()
             .setAuthor("Templates preview")
             .setDescription(`command : **-${title}**`)
@@ -70,7 +70,7 @@ class VisualCmd extends Command {
 				var tempsamp = fs.readFileSync('templatessample.txt').toString().split("\n");
             var titles = fs.readFileSync('templates.txt').toString().split("\n");
 	    	var title = titles[i-1]
-			var temp0samp = tempsamptitles[i-1]
+			var temp0samp = tempsamp[i-1]
         const embed2 = new Discord.RichEmbed()
             .setAuthor("Templates preview")
             .setDescription(`command : **-${title}**`)
