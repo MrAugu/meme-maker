@@ -63,7 +63,7 @@ class WowCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
     const newMeme = new Canvas(400, 300)
       .addImage(image, 0, 0, 400, 300)
-      .setColor('#f2f2f2')
+      .setColor('#ffffff')
       .setTextFont('bold 28px Impact')
       .setTextAlign('center')
       .addText(topText, 200, 30)
