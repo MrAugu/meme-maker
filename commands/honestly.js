@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const { Canvas } = require('canvas-constructor');
 const fsn = require('fs-nextra');
 
-class FpCmd extends Command {
+class HonestlyCmd extends Command {
   constructor (client) {
     super(client, {
       name: "honestly",
@@ -61,13 +61,13 @@ class FpCmd extends Command {
     bottomText = this.client.separateText(bottomText, 21, 40);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
-    const newMeme = new Canvas(400, 300)
-      .addImage(image, 0, 0, 400, 300)
+    const newMeme = new Canvas(400, 260)
+      .addImage(image, 0, 0, 400, 260)
       .setColor('#f2f2f2')
       .setTextFont('bold 28px Impact')
       .setTextAlign('center')
       .addText(topText, 200, 30)
-      .addText(bottomText, 200, 270)
+      .addText(bottomText, 200, 2400)
       .toBuffer();
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 99%`);
     const attachment = new Discord.Attachment(newMeme, 'image.png');
@@ -77,4 +77,4 @@ class FpCmd extends Command {
   }
 }
 
-module.exports = FpCmd;
+module.exports = HonestlyCmd;
