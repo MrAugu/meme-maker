@@ -62,12 +62,12 @@ class HonestlyCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
     const newMeme = new Canvas(400, 260)
-      .addImage(image, 0, 0, 400, 235)
+      .addImage(image, 0, 0, 400, 260)
       .setColor('#f2f2f2')
       .setTextFont('bold 28px Impact')
       .setTextAlign('center')
       .addText(topText, 200, 30)
-      .addText(bottomText, 200, 2400)
+      .addText(bottomText, 200, 235)
       .toBuffer();
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 99%`);
     const attachment = new Discord.Attachment(newMeme, 'image.png');
