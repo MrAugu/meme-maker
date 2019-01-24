@@ -52,7 +52,7 @@ class OmgCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Please wait while printing your meme.`);
 
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
-    const image = await fsn.readFile("./templates/6.png");
+    const image = await fsn.readFile("./templates/6.jpg");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
     topText = this.client.separateText(topText, 34, 34);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
