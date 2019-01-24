@@ -34,14 +34,14 @@ class ScrollCmd extends Command {
       return msg.delete();
     }
 
-    if (topText.length > 50) return reply("Texts must be maximum 50 characters length.");
+    if (topText.length > 32) return reply("Texts must be maximum 32 characters length.");
 
     await msg.edit(`${this.client.config.emojis.loading} Please wait while printing your meme.`);
 
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
     const image = await fsn.readFile("./templates/33.jpg");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
-    topText = this.client.separateText(topText, 8, 15);
+    topText = this.client.separateText(topText, 7, 15);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
     const location = await this.client.textLocation(topText.length, 140, 360, false, true, 0, 0.5);
@@ -49,7 +49,7 @@ class ScrollCmd extends Command {
     const newMeme = new Canvas(528.7, 511.7)
       .addImage(image, 0, 0, 528.7, 511.7)
       .setColor("#000000")
-      .setTextFont('23px Impact')
+      .setTextFont('19px Impact')
       .setTextAlign('center')
       .addText(topText, location.from, location.to)
       .toBuffer();
