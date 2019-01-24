@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const { Canvas } = require('canvas-constructor');
 const fsn = require('fs-nextra');
 
-class RainbowCmd extends Command {
+class CheersCmd extends Command {
   constructor (client) {
     super(client, {
       name: "Cheers",
