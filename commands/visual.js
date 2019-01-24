@@ -1,7 +1,6 @@
 const emoji = require("../base/emojis.json");
 const Command = require("../base/Command");
 const Discord = require ("discord.js");
-const fsn = require('fs-nextra');
 var fs = require('fs');
 
 class VisualCmd extends Command {
@@ -24,13 +23,14 @@ class VisualCmd extends Command {
 
       var i = 1;
         
-		    const image = await fsn.readFile(`./templatessample/s (${i}).jpg`);
+		    var tempsamp = fs.readFileSync('templatessample.txt').toString().split("\n");
             var titles = fs.readFileSync('templates.txt').toString().split("\n");
-	    	var title = titles[i]
+	    	var title = titles[i-1]
+			var temp0samp = tempsamptitles[i-1]
         const embed = new Discord.RichEmbed()
             .setAuthor("Templates preview")
             .setDescription(`command : **-${title}**`)
-			.setImage(image)
+			.setImage(temp0samp)
             .setTimestamp()
             .setColor("#00c09b")
             .setFooter(`MemeMaker ©`);
@@ -46,13 +46,16 @@ class VisualCmd extends Command {
   messageReaction.remove(messageReaction.users.last());
   
               if (chosen === emoji.nex) {
+		  
 				  if( i === 59 ) i = 0;
 				i += 1;
-        var title = titles[i]
+				var tempsamp = fs.readFileSync('templatessample.txt').toString().split("\n");
+            var titles = fs.readFileSync('templates.txt').toString().split("\n");
+	    	var title = titles[i-1]
+			var temp0samp = tempsamptitles[i-1]
         const embed2 = new Discord.RichEmbed()
             .setAuthor("Templates preview")
             .setDescription(`command : **-${title}**`)
-			.setImage(image)
             .setTimestamp()
             .setColor("#00c09b")
             .setFooter(`MemeMaker ©`);
@@ -63,9 +66,13 @@ class VisualCmd extends Command {
             if (chosen === emoji.pre) {
 				if (i === 1) return i = 60
 				i -= 1;
+				var tempsamp = fs.readFileSync('templatessample.txt').toString().split("\n");
+            var titles = fs.readFileSync('templates.txt').toString().split("\n");
+	    	var title = titles[i-1]
+			var temp0samp = tempsamptitles[i-1]
         const embed2 = new Discord.RichEmbed()
-            .setAuthor(`command : **-${title[i]}**`)
-            .setDescription(image)
+            .setAuthor("Templates preview")
+            .setDescription(`command : **-${title}**`)
             .setTimestamp()
             .setColor("#00c09b")
             .setFooter(`MemeMaker ©`);
