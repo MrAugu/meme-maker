@@ -64,7 +64,6 @@ class RainbowCmd extends Command {
     const newMeme = new Canvas(430, 300)
       .addImage(image, 0, 0, 430, 300)
       .setColor('#ffffff')
-      .addRect(5, 5, 290, 290)
       .setTextFont('bold 28px Impact')
       .setTextAlign('center')
       .addText(topText, 215, 30)
