@@ -67,7 +67,7 @@ class ObamaCmd extends Command {
       .setTextFont('bold 28px Impact')
       .setTextAlign('center')
       .addText(topText, 215, 30)
-      .addText(bottomText, 215, 270)
+      .addText(bottomText, 215, 280)
       .toBuffer();
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 99%`);
     const attachment = new Discord.Attachment(newMeme, 'image.png');
