@@ -61,13 +61,13 @@ class CheersCmd extends Command {
     bottomText = this.client.separateText(bottomText, 21, 40);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
-    const newMeme = new Canvas(400, 300)
-      .addImage(image, 0, 0, 400, 300)
+    const newMeme = new Canvas(440, 300)
+      .addImage(image, 0, 0, 440, 300)
       .setColor('#ffffff')
       .setTextFont('bold 28px Impact')
       .setTextAlign('center')
-      .addText(topText, 200, 30)
-      .addText(bottomText, 200, 270)
+      .addText(topText, 220, 30)
+      .addText(bottomText, 220, 270)
       .toBuffer();
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 99%`);
     const attachment = new Discord.Attachment(newMeme, 'image.png');
