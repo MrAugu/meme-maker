@@ -3,11 +3,11 @@ const Discord = require("discord.js");
 const { Canvas } = require('canvas-constructor');
 const fsn = require('fs-nextra');
 
-class OmgCmd extends Command {
+class CryCmd extends Command {
   constructor (client) {
     super(client, {
-      name: "omg",
-      description: "Makes a 'OMG' meme.",
+      name: "cry",
+      description: "Makes a crying man meme.",
       category: "Meme Maker",
       usage: "",
       enabled: true,
@@ -23,7 +23,7 @@ class OmgCmd extends Command {
     const msg = await message.channel.send(`${this.client.config.emojis.loading} Preparing the setup for you.`);
     await msg.edit("Please answer following questions in order to make your meme. You can say `cancel` to stop the setup.");
 
-    let topText = await this.client.awaitReply(message, "Please tell me what is not surprizing.", 60000);
+    let topText = await this.client.awaitReply(message, "Please tell me what makes you cry.", 60000);
     if (topText === false) {
       reply("Prompt timed out.");
       return msg.delete();
@@ -36,7 +36,7 @@ class OmgCmd extends Command {
 
     if (topText.length > 200) return reply("Texts must be maximum 200 characters length.");
 
-    let bottomText = await this.client.awaitReply(message, "Please tell me what surprizes you.", 60000);
+    let bottomText = await this.client.awaitReply(message, "Please tell me what makes you cry more.", 60000);
     if (bottomText === false) {
       reply("Prompt timed out.");
       return msg.delete();
@@ -58,12 +58,12 @@ class OmgCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
     bottomText = this.client.separateText(bottomText, 18, 20);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
-    const location = await this.client.textLocation(topText.length, 155, 122, true, true, 0.1, 0.5);
-    const location2 = await this.client.textLocation(bottomText.length, 155, 384, true, true, 0.1, 0.5);
+    const location = await this.client.textLocation(topText.length, 127, 127, true, true, 0.1, 0.5);
+    const location2 = await this.client.textLocation(bottomText.length, 127, 384, true, true, 0.1, 0.5);
     console.log(location, location2);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
-    const newMeme = new Canvas(651.1, 510)
-      .addImage(image, 0, 0, 651.1, 510)
+    const newMeme = new Canvas(528.75, 528.75)
+      .addImage(image, 0, 0,528.75, 528.75)
       .setColor("#000000")
       .setTextFont('24px Impact')
       .setTextAlign('center')
@@ -74,8 +74,8 @@ class OmgCmd extends Command {
     const attachment = new Discord.Attachment(newMeme, 'image.png');
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 100%`);
     await msg.delete();
-    message.channel.send("Your 'OMG' meme is ready:", attachment);
+    message.channel.send("Your crying man meme is ready:", attachment);
   }
 }
 
-module.exports = OmgCmd;
+module.exports = CryCmd;
