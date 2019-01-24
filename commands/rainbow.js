@@ -66,8 +66,7 @@ class RainbowCmd extends Command {
       .setColor('#ffffff')
       .setTextFont('bold 28px Impact')
       .setTextAlign('center')
-	  .setStrokeStyle = 'rgba(0,0,0,0.5)'
-	  .setStroke()
+	  .setStrokeStyle = ('#000000')
       .addText(topText, 215, 30)
       .addText(bottomText, 215, 270)
       .toBuffer();
