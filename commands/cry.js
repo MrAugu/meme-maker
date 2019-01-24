@@ -54,18 +54,18 @@ class CryCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
     const image = await fsn.readFile("./templates/19.jpg");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
-    topText = this.client.separateText(topText, 18, 20);
+    topText = this.client.separateText(topText, 17, 20);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
-    bottomText = this.client.separateText(bottomText, 18, 20);
+    bottomText = this.client.separateText(bottomText, 17, 20);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
-    const location = await this.client.textLocation(topText.length, 127, 127, true, true, 0.1, 0.5);
-    const location2 = await this.client.textLocation(bottomText.length, 127, 384, true, true, 0.1, 0.5);
+    const location = await this.client.textLocation(topText.length, 131, 127, true, true, 0.1, 0.5);
+    const location2 = await this.client.textLocation(bottomText.length, 131, 384, true, true, 0.1, 0.5);
     console.log(location, location2);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
     const newMeme = new Canvas(528.75, 528.75)
       .addImage(image, 0, 0,528.75, 528.75)
       .setColor("#000000")
-      .setTextFont('24px Impact')
+      .setTextFont('23px Impact')
       .setTextAlign('center')
       .addText(topText, location.from, location.to)
       .addText(bottomText, location2.from, location2.to)
