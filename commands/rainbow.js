@@ -63,7 +63,7 @@ class RainbowCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
     const newMeme = new Canvas(430, 300)
       .addImage(image, 0, 0, 430, 300)
-      .setColor('#000000')
+      .setColor('#ffffff')
       .setTextFont('bold 28px Impact')
       .setTextAlign('center')
 	  .setStrokeStyle = 'rgba(0,0,0,0.5)'
