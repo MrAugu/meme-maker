@@ -61,13 +61,13 @@ class SayCmd extends Command {
     bottomText = this.client.separateText(bottomText, 21, 40);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
-    const newMeme = new Canvas(430, 300)
-      .addImage(image, 0, 0, 430, 300)
+    const newMeme = new Canvas(460, 300)
+      .addImage(image, 0, 0, 460, 300)
       .setColor('#ffffff')
       .setTextFont('bold 28px Impact')
       .setTextAlign('center')
-      .addText(topText, 215, 30)
-      .addText(bottomText, 215, 270)
+      .addText(topText, 230, 30)
+      .addText(bottomText, 230, 270)
       .toBuffer();
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 99%`);
     const attachment = new Discord.Attachment(newMeme, 'image.png');
