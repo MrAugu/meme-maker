@@ -58,8 +58,8 @@ class OmgCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
     bottomText = this.client.separateText(bottomText, 18, 20);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
-    const location = await this.client.textLocation(topText.length, 155, 122, true, true, 0.1, 1);
-    const location2 = await this.client.textLocation(bottomText.length, 155, 384, true, true, 0.1, 1);
+    const location = await this.client.textLocation(topText.length, 155, 122, true, true, 0.1, 0.5);
+    const location2 = await this.client.textLocation(bottomText.length, 155, 384, true, true, 0.1, 0.5);
     console.log(location, location2);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
     const newMeme = new Canvas(651.1, 510)
