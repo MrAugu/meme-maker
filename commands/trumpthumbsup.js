@@ -56,7 +56,7 @@ class TrumpthumbsupCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
   //  topText = this.client.separateText(topText, 21, 40);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
-    bottomText = this.client.separateText(bottomText, 21, 40);
+    bottomText = this.client.separateText(bottomText, 30, 50);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
     const newMeme = new Canvas(400, 300)

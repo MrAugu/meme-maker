@@ -34,7 +34,7 @@ class HearthCmd extends Command {
       return msg.delete();
     }
 
-    if (topText.length > 21) return reply("Text on the top of the meme must be maximum 21 characters length.");
+    if (topText.length > 40) return reply("Text on the top of the meme must be maximum 40 characters length.");
 
     let bottomText = await this.client.awaitReply(message, "Please tell me what text i should put on bottom of the meme. If you want to leave blank, type `.`.", 60000);
     if (bottomText === false) {
@@ -47,7 +47,7 @@ class HearthCmd extends Command {
       return msg.delete();
     }
 
-    if (topText.length > 35) return reply("Text on the bottom of the meme must be maximum 35 characters length.");
+    if (topText.length > 40) return reply("Text on the bottom of the meme must be maximum 40 characters length.");
 
     if (bottomText === ".") bottomText = "";
 
@@ -56,15 +56,15 @@ class HearthCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
     const image = await fsn.readFile("./templates/35.png");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
-    topText = this.client.separateText(topText, 21, 40);
+    topText = this.client.separateText(topText, 40, 50);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
-    bottomText = this.client.separateText(bottomText, 21, 40);
+    bottomText = this.client.separateText(bottomText, 40, 50);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
     const newMeme = new Canvas(300, 300)
       .addImage(image, 0, 0, 300, 300)
       .setColor('#000000')
-      .setTextFont('20px Impact')
+      .setTextFont('bold 21px Impact')
       .setTextAlign('center')
       .addText(topText, 150, 30)
       .addText(bottomText, 150, 270)
