@@ -56,9 +56,9 @@ class HearthCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
     const image = await fsn.readFile("./templates/35.png");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
-    topText = this.client.separateText(topText, 21, 30);
+    topText = this.client.separateText(topText, 17, 30);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
-    bottomText = this.client.separateText(bottomText, 21, 30);
+    bottomText = this.client.separateText(bottomText, 18, 30);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
     const newMeme = new Canvas(300, 300)
@@ -67,7 +67,7 @@ class HearthCmd extends Command {
       .setTextFont('bold 21px Impact')
       .setTextAlign('center')
       .addText(topText, 150, 30)
-      .addText(bottomText, 150, 285)
+      .addText(bottomText, 150, 280)
       .toBuffer();
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 99%`);
     const attachment = new Discord.Attachment(newMeme, 'image.png');
