@@ -3,11 +3,11 @@ const Discord = require("discord.js");
 const { Canvas } = require('canvas-constructor');
 const fsn = require('fs-nextra');
 
-class PutinCmd extends Command {
+class SkeletonCmd extends Command {
   constructor (client) {
     super(client, {
-      name: "putin",
-      description: "Makes a Putin meme.",
+      name: "skeleton",
+      description: "Makes a 'Skeleton' meme.",
       category: "Meme Maker",
       usage: "",
       enabled: true,
@@ -54,27 +54,27 @@ class PutinCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Please wait while printing your meme.`);
 
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
-    const image = await fsn.readFile("./templates/36.png");
+    const image = await fsn.readFile("./templates/50.png");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
     topText = this.client.separateText(topText, 21, 40);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
     bottomText = this.client.separateText(bottomText, 21, 40);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
-    const newMeme = new Canvas(400, 260)
-      .addImage(image, 0, 0, 400, 260)
-      .setColor('#000000')
+    const newMeme = new Canvas(600, 800)
+      .addImage(image, 0, 0, 600, 800)
+      .setColor('#f2f2f2')
       .setTextFont('bold 28px Impact')
       .setTextAlign('center')
-      .addText(topText, 200, 30)
-      .addText(bottomText, 200, 245)
+      .addText(topText, 300, 30)
+      .addText(bottomText, 300, 750)
       .toBuffer();
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 99%`);
     const attachment = new Discord.Attachment(newMeme, 'image.png');
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 100%`);
     await msg.delete();
-    message.channel.send("Your 'Putin' meme is ready:", attachment);
+    message.channel.send("Your 'Skeleton' meme is ready:", attachment);
   }
 }
 
-module.exports = PutinCmd;
+module.exports = SkeletonCmd;
