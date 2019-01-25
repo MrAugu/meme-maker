@@ -3,11 +3,11 @@ const Discord = require("discord.js");
 const { Canvas } = require('canvas-constructor');
 const fsn = require('fs-nextra');
 
-class SkeletonCmd extends Command {
+class ButtonCmd extends Command {
   constructor (client) {
     super(client, {
-      name: "skeleton",
-      description: "Makes a 'Skeleton' meme.",
+      name: "button",
+      description: "Makes a Big Button screaming meme.",
       category: "Meme Maker",
       usage: "",
       enabled: true,
@@ -23,7 +23,7 @@ class SkeletonCmd extends Command {
     const msg = await message.channel.send(`${this.client.config.emojis.loading} Preparing the setup for you.`);
     await msg.edit("Please answer following questions in order to make your meme. You can say `cancel` to stop the setup.");
 
-    let topText = await this.client.awaitReply(message, "Please tell me what text i should put on top of the meme.", 60000);
+    let topText = await this.client.awaitReply(message, "Please tell me what made Pattrick scream.", 60000);
     if (topText === false) {
       reply("Prompt timed out.");
       return msg.delete();
@@ -34,33 +34,31 @@ class SkeletonCmd extends Command {
       return msg.delete();
     }
 
-    if (topText.length > 50) return reply("Text on the top of the meme must be maximum 50 characters length.");
-
-   
+    if (topText.length > 32) return reply("Texts must be maximum 32 characters length.");
 
     await msg.edit(`${this.client.config.emojis.loading} Please wait while printing your meme.`);
 
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
-    const image = await fsn.readFile("./templates/37.png");
+    const image = await fsn.readFile("./templates/25.jpg");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
-    topText = this.client.separateText(topText, 21, 40);
+    topText = this.client.separateText(topText, 7, 15);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
-    bottomText = this.client.separateText(bottomText, 21, 40);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
+    const location = await this.client.textLocation(topText.length, 164,285, false, true, 0, 0.5);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
-    const newMeme = new Canvas(600, 800)
-      .addImage(image, 0, 0, 600, 800)
-      .setColor('#000000')
-      .setTextFont('bold 35px Impact')
+    const newMeme = new Canvas(600, 446)
+      .addImage(image, 0, 0, 600, 446)
+      .setColor("#ffffff")
+      .setTextFont('19px Impact')
       .setTextAlign('center')
-      .addText(topText, 300, 40)
+      .addText(topText, location.from, location.to)
       .toBuffer();
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 99%`);
     const attachment = new Discord.Attachment(newMeme, 'image.png');
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 100%`);
     await msg.delete();
-    message.channel.send("Your 'Skeleton' meme is ready:", attachment);
+    message.channel.send("Your Button meme is ready:", attachment);
   }
 }
 
-module.exports = SkeletonCmd;
+module.exports = ButtonCmd;
