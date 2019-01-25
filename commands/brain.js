@@ -84,8 +84,8 @@ class BrainCmd extends Command {
     topText = this.client.separateText(topText, 16, 24);
     bottomText = this.client.separateText(bottomText, 16, 24);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
-    topText2 = this.client.separateText(topText, 16, 24);
-    bottomText2 = this.client.separateText(bottomText, 16, 24);
+    topText2 = this.client.separateText(topText2, 16, 24);
+    bottomText2 = this.client.separateText(bottomText2, 16, 24);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
     const location = await this.client.textLocation(topText.length, 200, 150, true, true, 0.1, 1);
     const location2 = await this.client.textLocation(bottomText.length, 200, 450, true, true, 0.1, 1);
