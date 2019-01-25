@@ -49,7 +49,7 @@ class ButtonCmd extends Command {
     const newMeme = new Canvas(600, 446)
       .addImage(image, 0, 0, 600, 446)
       .setColor("#ffffff")
-      .setTextFont('25px Impact')
+      .setTextFont('bold 25px Impact')
       .setTextAlign('center')
       .addText(topText, location.from, location.to)
       .toBuffer();
