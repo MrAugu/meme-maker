@@ -73,7 +73,7 @@ class BrainCmd extends Command {
       return msg.delete();
     }
 
-    if (bottomText2.length > 200) return reply("Texts must be maximum 200 characters length.");
+    if (bottomText2.length > 200) return reply("Text must be maximum 200 characters length.");
 	
 	
     await msg.edit(`${this.client.config.emojis.loading} Please wait while printing your meme.`);
