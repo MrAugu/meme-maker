@@ -36,21 +36,6 @@ class HearthCmd extends Command {
 
     if (topText.length > 40) return reply("Text on the top of the meme must be maximum 40 characters length.");
 
-    let bottomText = await this.client.awaitReply(message, "Please tell me what text i should put on bottom of the meme. If you want to leave blank, type `.`.", 60000);
-    if (bottomText === false) {
-      reply("Prompt timed out.");
-      return msg.delete();
-    }
-
-    if (bottomText.toLowerCase() === "cancel") {
-      reply("Aborted!");
-      return msg.delete();
-    }
-
-    if (topText.length > 40) return reply("Text on the bottom of the meme must be maximum 40 characters length.");
-
-    if (bottomText === ".") bottomText = "";
-
     await msg.edit(`${this.client.config.emojis.loading} Please wait while printing your meme.`);
 
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
@@ -58,7 +43,6 @@ class HearthCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
     topText = this.client.separateText(topText, 17, 30);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
-    bottomText = this.client.separateText(bottomText, 18, 30);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
     const newMeme = new Canvas(300, 300)
@@ -67,7 +51,6 @@ class HearthCmd extends Command {
       .setTextFont('bold 21px Impact')
       .setTextAlign('center')
       .addText(topText, 150, 30)
-      .addText(bottomText, 150, 280)
       .toBuffer();
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 99%`);
     const attachment = new Discord.Attachment(newMeme, 'image.png');
