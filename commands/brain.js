@@ -81,16 +81,16 @@ class BrainCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
     const image = await fsn.readFile("./templates/4.jpg");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
-    topText = this.client.separateText(topText, 21, 40);
-    bottomText = this.client.separateText(bottomText, 21, 40);
+    topText = this.client.separateText(topText, 16, 24);
+    bottomText = this.client.separateText(bottomText, 16, 24);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
-    topText2 = this.client.separateText(topText, 21, 40);
-    bottomText2 = this.client.separateText(bottomText, 21, 40);
+    topText2 = this.client.separateText(topText, 16, 24);
+    bottomText2 = this.client.separateText(bottomText, 16, 24);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
     const location = await this.client.textLocation(topText.length, 200, 150, true, true, 0.1, 1);
     const location2 = await this.client.textLocation(bottomText.length, 200, 450, true, true, 0.1, 1);
-	const location3 = await this.client.textLocation(topText.length, 200, 750, true, true, 0.1, 1);
-    const location4 = await this.client.textLocation(bottomText.length, 200, 1050, true, true, 0.1, 1);
+	const location3 = await this.client.textLocation(topText2.length, 200, 750, true, true, 0.1, 1);
+    const location4 = await this.client.textLocation(bottomText2.length, 200, 1050, true, true, 0.1, 1);
     console.log(location, location2);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
     const newMeme = new Canvas(857, 1202)
