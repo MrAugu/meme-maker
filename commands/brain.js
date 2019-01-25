@@ -79,7 +79,7 @@ class BrainCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Please wait while printing your meme.`);
 
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
-    const image = await fsn.readFile("./templates/2.png");
+    const image = await fsn.readFile("./templates/4.jpg");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
     topText = this.client.separateText(topText, 21, 40);
     bottomText = this.client.separateText(bottomText, 21, 40);
@@ -96,7 +96,7 @@ class BrainCmd extends Command {
     const newMeme = new Canvas(857, 1202)
       .addImage(image, 0, 0, 857, 1202)
       .setColor("#000000")
-      .setTextFont('29px Impact')
+      .setTextFont('34px Impact')
       .setTextAlign('center')
       .addText(topText, location.from, location.to)
       .addText(bottomText, location2.from, location2.to)
