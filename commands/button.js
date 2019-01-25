@@ -23,7 +23,7 @@ class ButtonCmd extends Command {
     const msg = await message.channel.send(`${this.client.config.emojis.loading} Preparing the setup for you.`);
     await msg.edit("Please answer following questions in order to make your meme. You can say `cancel` to stop the setup.");
 
-    let topText = await this.client.awaitReply(message, "Please tell me what made Pattrick scream.", 60000);
+    let topText = await this.client.awaitReply(message, "Please tell me what to write on the button.", 60000);
     if (topText === false) {
       reply("Prompt timed out.");
       return msg.delete();
@@ -39,7 +39,7 @@ class ButtonCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Please wait while printing your meme.`);
 
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
-    const image = await fsn.readFile("./templates/25.jpg");
+    const image = await fsn.readFile("./templates/51.jpg");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
     topText = this.client.separateText(topText, 7, 15);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
@@ -49,7 +49,7 @@ class ButtonCmd extends Command {
     const newMeme = new Canvas(600, 446)
       .addImage(image, 0, 0, 600, 446)
       .setColor("#ffffff")
-      .setTextFont('19px Impact')
+      .setTextFont('25px Impact')
       .setTextAlign('center')
       .addText(topText, location.from, location.to)
       .toBuffer();
