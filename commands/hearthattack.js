@@ -3,11 +3,11 @@ const Discord = require("discord.js");
 const { Canvas } = require('canvas-constructor');
 const fsn = require('fs-nextra');
 
-class KittyCmd extends Command {
+class HearthCmd extends Command {
   constructor (client) {
     super(client, {
-      name: "kitty",
-      description: "Makes a kitty meme.",
+      name: "hearthattack",
+      description: "Makes a hearth attack meme.",
       category: "Meme Maker",
       usage: "",
       enabled: true,
@@ -47,7 +47,7 @@ class KittyCmd extends Command {
       return msg.delete();
     }
 
-    if (topText.length > 21) return reply("Text on the bottom of the meme must be maximum 21 characters length.");
+    if (topText.length > 35) return reply("Text on the bottom of the meme must be maximum 35 characters length.");
 
     if (bottomText === ".") bottomText = "";
 
@@ -64,7 +64,7 @@ class KittyCmd extends Command {
     const newMeme = new Canvas(300, 300)
       .addImage(image, 0, 0, 300, 300)
       .setColor('#000000')
-      .setTextFont('28px Impact')
+      .setTextFont('20px Impact')
       .setTextAlign('center')
       .addText(topText, 150, 30)
       .addText(bottomText, 150, 270)
@@ -73,8 +73,8 @@ class KittyCmd extends Command {
     const attachment = new Discord.Attachment(newMeme, 'image.png');
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 100%`);
     await msg.delete();
-    message.channel.send("Your kitty meme is ready:", attachment);
+    message.channel.send("Your hearth attack meme is ready:", attachment);
   }
 }
 
-module.exports = KittyCmd;
+module.exports = HearthCmd;

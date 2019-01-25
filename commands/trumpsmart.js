@@ -47,7 +47,7 @@ class TrumpsmartCmd extends Command {
       return msg.delete();
     }
 
-    if (topText.length > 21) return reply("Text on the bottom of the meme must be maximum 21 characters length.");
+    if (topText.length > 40) return reply("Text on the bottom of the meme must be maximum 40 characters length.");
 
     if (bottomText === ".") bottomText = "";
 
@@ -64,7 +64,7 @@ class TrumpsmartCmd extends Command {
     const newMeme = new Canvas(400, 300)
       .addImage(image, 0, 0, 400, 300)
       .setColor('#ffffff')
-      .setTextFont('bold 28px Impact')
+      .setTextFont('bold 20px Impact')
       .setTextAlign('center')
       .addText(topText, 200, 30)
       .addText(bottomText, 200, 270)

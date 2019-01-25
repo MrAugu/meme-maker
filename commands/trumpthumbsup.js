@@ -62,7 +62,7 @@ class TrumpthumbsupCmd extends Command {
     const newMeme = new Canvas(400, 300)
       .addImage(image, 0, 0, 400, 300)
       .setColor('#ffffff')
-      .setTextFont('bold 28px Impact')
+      .setTextFont('bold 20px Impact')
       .setTextAlign('center')
      // .addText(topText, 200, 30)
       .addText(bottomText, 200, 270)
