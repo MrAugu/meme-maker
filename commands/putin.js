@@ -67,7 +67,7 @@ class PutinCmd extends Command {
       .setTextFont('bold 28px Impact')
       .setTextAlign('center')
       .addText(topText, 200, 30)
-      .addText(bottomText, 200, 245)
+      .addText(bottomText, 200, 255)
       .toBuffer();
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 99%`);
     const attachment = new Discord.Attachment(newMeme, 'image.png');

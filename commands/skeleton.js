@@ -54,7 +54,7 @@ class SkeletonCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Please wait while printing your meme.`);
 
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
-    const image = await fsn.readFile("./templates/50.png");
+    const image = await fsn.readFile("./templates/37.png");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
     topText = this.client.separateText(topText, 21, 40);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
@@ -63,11 +63,11 @@ class SkeletonCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
     const newMeme = new Canvas(600, 800)
       .addImage(image, 0, 0, 600, 800)
-      .setColor('#f2f2f2')
-      .setTextFont('bold 28px Impact')
+      .setColor('#000000')
+      .setTextFont('bold 35px Impact')
       .setTextAlign('center')
       .addText(topText, 300, 30)
-      .addText(bottomText, 300, 750)
+      .addText(bottomText, 300, 760)
       .toBuffer();
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 99%`);
     const attachment = new Discord.Attachment(newMeme, 'image.png');
