@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const { Canvas } = require('canvas-constructor');
 const fsn = require('fs-nextra');
 
-class BunnyCmd extends Command {
+class LegitCmd extends Command {
   constructor (client) {
     super(client, {
       name: "legit",
@@ -61,4 +61,4 @@ class BunnyCmd extends Command {
   }
 }
 
-module.exports = BunnyCmd;
+module.exports = LegitCmd;
