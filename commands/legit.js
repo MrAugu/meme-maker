@@ -34,7 +34,7 @@ class LegitCmd extends Command {
       return msg.delete();
     }
 
-    if (topText.length > 10) return reply("Text can be maximum 10 characters length.");
+    if (topText.length > 100) return reply("Text can be maximum 100 characters length.");
 
     await msg.edit(`${this.client.config.emojis.loading} Please wait while printing your meme.`);
 
