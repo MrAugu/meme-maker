@@ -34,14 +34,14 @@ class LegitCmd extends Command {
       return msg.delete();
     }
 
-    if (topText.length > 69) return reply("Text can be maximum 69 characters length.");
+    if (topText.length > 10) return reply("Text can be maximum 10 characters length.");
 
     await msg.edit(`${this.client.config.emojis.loading} Please wait while printing your meme.`);
 
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
     const image = await fsn.readFile("./templates/45.png");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
-    topText = this.client.separateText(topText, 23, 10);
+    topText = this.client.separateText(topText, 45, 60);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
     const location = await this.client.textLocation(topText.length, 315, 80, true, true, 0.001, 0.5);
