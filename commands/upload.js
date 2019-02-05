@@ -14,7 +14,7 @@ class UploadCmd extends Command {
   constructor (client) {
     super(client, {
       name: "upload",
-      description: "",
+      description: "Upload a meme to database.",
       category: "General",
       usage: "[url]",
       enabled: true,
