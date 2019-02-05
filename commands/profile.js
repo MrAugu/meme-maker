@@ -12,7 +12,7 @@ class ProfileCmd extends Command {
   constructor (client) {
     super(client, {
       name: "profile",
-      description: "",
+      description: "Show your profile or other's person profile.",
       category: "General",
       usage: "[user]",
       enabled: true,
