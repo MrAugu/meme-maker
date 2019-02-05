@@ -1,0 +1,34 @@
+{
+  "name": "i-dunno",
+  "version": "0.0.1",
+  "description": "MrAugu's meme maker Discord Bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "discord.js",
+    "discordjs",
+    "node",
+    "node.js",
+    "javascript",
+    "discord",
+    "discordbot",
+    "bot"
+  ],
+  "author": "MrAugu#9016",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.3.1",
+    "canvas-constructor": "^2.1.1",
+    "colors": "^1.3.3",
+    "discord.js": "^11.4.2",
+    "fs-nextra": "^0.3.8",
+    "klaw": "^3.0.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.4.6",
+    "path": "^0.12.7",
+    "request": "^2.88.0",
+    "valid-url": "^1.0.9"
+  }
+}
