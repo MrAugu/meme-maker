@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const { Canvas } = require('canvas-constructor');
 const fsn = require('fs-nextra');
 
-class PikachuCmd extends Command {
+class JokeCmd extends Command {
   constructor (client) {
     super(client, {
       name: "joke",
@@ -41,15 +41,15 @@ class PikachuCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
     const image = await fsn.readFile("./templates/48.jpg");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
-    topText = this.client.separateText(topText, 34, 10);
+    topText = this.client.separateText(topText, 30, 10);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
-    const location = await this.client.textLocation(topText.length, 280, 110, true, true, 0.001, 0.5);
+    const location = await this.client.textLocation(topText.length, 300,80, true, true, 0.001, 0.5);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
     const newMeme = new Canvas(600, 500)
       .addImage(image, 0, 0, 600, 500)
       .setColor("#000000")
-      .setTextFont('34px Impact')
+      .setTextFont('28px Impact')
       .setTextAlign('center')
       .addText(topText, location.from, location.to)
       .toBuffer();
@@ -57,7 +57,7 @@ class PikachuCmd extends Command {
     const attachment = new Discord.Attachment(newMeme, 'image.png');
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 100%`);
     await msg.delete();
-    message.channel.send(`You'r "am I a joke for you" meme is ready:`, attachment);
+    message.channel.send(`Your "am I a joke for you" meme is ready:`, attachment);
   }
 }
 
