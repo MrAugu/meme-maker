@@ -3,11 +3,11 @@ const Discord = require("discord.js");
 const { Canvas } = require('canvas-constructor');
 const fsn = require('fs-nextra');
 
-class PichakuCmd extends Command {
+class PikachuCmd extends Command {
   constructor (client) {
     super(client, {
-      name: "pichaku",
-      description: "Makes a pichaku meme.",
+      name: "pikachu",
+      description: "Makes a pikachu meme.",
       category: "Meme Maker",
       usage: "",
       enabled: true,
@@ -23,7 +23,7 @@ class PichakuCmd extends Command {
     const msg = await message.channel.send(`${this.client.config.emojis.loading} Preparing the setup for you.`);
     await msg.edit("Please answer following questions in order to make your meme. You can say `cancel` to stop the setup.");
 
-    let topText = await this.client.awaitReply(message, "Please tell me text to amaze pichaku with.", 60000);
+    let topText = await this.client.awaitReply(message, "Please tell me text to amaze pikachu with.", 60000);
     if (topText === false) {
       reply("Prompt timed out.");
       return msg.delete();
@@ -57,8 +57,8 @@ class PichakuCmd extends Command {
     const attachment = new Discord.Attachment(newMeme, 'image.png');
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 100%`);
     await msg.delete();
-    message.channel.send("You'r pichaku meme is ready:", attachment);
+    message.channel.send("You'r pikachu meme is ready:", attachment);
   }
 }
 
-module.exports = PichakuCmd;
+module.exports = PikachuCmd;
