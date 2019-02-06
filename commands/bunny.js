@@ -44,7 +44,7 @@ class BunnyCmd extends Command {
     topText = this.client.separateText(topText, 23, 10);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
-    const location = await this.client.textLocation(topText.length, 225, 71, true, true, 0.001, 0.5);
+    const location = await this.client.textLocation(topText.length, 225, 77, true, true, 0.001, 0.5);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
     const newMeme = new Canvas(472.6, 511.7)
       .addImage(image, 0, 0, 472.6, 511.7)
