@@ -15,7 +15,9 @@ module.exports = class {
 
     const args = message.content.slice(this.client.config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
-
+    if (command === "loader") {
+      return reply(this.client.config.emojis.loading);
+    }
     if (message.guild && !message.member) await message.guild.fetchMember(message.author);
 
     const cmd = this.client.commands.get(command) || this.client.commands.get(this.client.aliases.get(command));
@@ -80,7 +82,8 @@ Your Permission Level: ${level} - ${this.client.config.permLevels.find(l => l.le
       await cmd.run(message, args, level, reply);
       message.channel.stopTyping(true);
     } catch (e) {
-      reply(`Oops seems like these was an error executing command. We tracked error and we will get right into it. (Error: ${e})`);
+      reply(`${this.client.config.emojis.fp} Oops seems like these was an error executing command. We tracked error and we will get right into it. (Error: ${e})`);
+      message.channel.stopTyping(true);
       const errEmbed = new Discord.RichEmbed()
         .setAuthor(message.author.tag, message.author.displayAvatarURL)
         .setTitle("An Error Occured")

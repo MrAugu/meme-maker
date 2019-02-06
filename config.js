@@ -6,7 +6,8 @@ const config = {
   "mongo": "mongodb://bret:bret02@ds111455.mlab.com:11455/bret",
   
   "emojis": {
-    "loading": "<a:loader:542349946041663488>"
+    "loading": "<a:loader:542349946041663488>",
+    "fp": "<:fp:527540498693619728>"
   },
 
   "channels": {

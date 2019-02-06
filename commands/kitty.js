@@ -73,7 +73,7 @@ class KittyCmd extends Command {
     const attachment = new Discord.Attachment(newMeme, 'image.png');
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 100%`);
     await msg.delete();
-    message.channel.send("You'r kitty meme is ready:", attachment);
+    message.channel.send("Your kitty meme is ready:", attachment);
   }
 }
 
