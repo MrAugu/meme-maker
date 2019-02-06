@@ -1,4 +1,4 @@
-const emoji = require("config.js");
+const emoji = require("emojis.json");
 const Command = require("../base/Command");
 const Discord = require ("discord.js");
 var i = 0;
@@ -40,15 +40,15 @@ class TempCmd extends Command {
       const msg = await message.channel.send(embed);
 
 
-        await msg.react(emoji.config.nex);
-        await msg.react(emoji.config.stp);
+        await msg.react(emoji.nex);
+        await msg.react(emoji.stp);
         const collector = msg.createReactionCollector((reaction, user) =>  user !== client.user );
         collector.on('collect', async (messageReaction) => {
             if( message.author.id !== messageReaction.users.last().id || client.id ==messageReaction.users.last().id ) return;
-            const chosen = messageReaction.emoji.config.name;
+            const chosen = messageReaction.emoji.name;
   messageReaction.remove(messageReaction.users.last());
 
-            if (chosen === emoji.config.nex) {
+            if (chosen === emoji.nex) {
                 const templates2 = [];
                 var a = i;
                 for ( i ; i < a+10 ; i++) {
@@ -76,7 +76,7 @@ class TempCmd extends Command {
               return;
                 
             }
-            if (chosen === emoji.config.stp) {
+            if (chosen === emoji.stp) {
 
                 collector.stop();
                 msg.delete();
