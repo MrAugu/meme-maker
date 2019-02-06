@@ -39,7 +39,7 @@ class NothereCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Please wait while printing your meme.`);
 
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
-    const image = await fsn.readFile("./templates/30.png");
+    const image = await fsn.readFile("./templates/30.jpg");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
     topText = this.client.separateText(topText, 23, 10);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
