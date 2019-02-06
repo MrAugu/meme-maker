@@ -23,7 +23,7 @@ class PingCmd extends Command {
     
     m.edit({embed: {
 	     color: 49307,
-         description: `** It only took me **\`${tLatency}\`ms\n**Oh, and, my heartbeat is **\`${cLatency}\`ms!`
+         description: `**It only took me **\`${tLatency}\`ms\n**Oh, and, my heartbeat is **\`${cLatency}\`ms!`
                    }
           });
   }
