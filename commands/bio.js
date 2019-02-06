@@ -39,12 +39,20 @@ class BioCmd extends Command {
         });
 
         await newProfile.save().catch(e => this.client.logger.error(e));
-        return reply(`Sucessfully set your bio to \`${args.join(" ")}\`.`);
+        return reply({embed: {
+	     color: 606026,
+         description: `**Sucessfully** set your bio to \`${args.join(" ")}\`.`
+                             }
+                    });
       }
 
       data.bio = args.join(" ");
       data.save().catch(e => this.client.logger.error(e));
-      return reply(`Sucessfully set your bio to \`${args.join(" ")}\`.`);
+      return reply({embed: {
+	     color: 606026,
+         description: `**Sucessfully** set your bio to \`${args.join(" ")}\`.`
+                             }
+                    });
     });
   } 
 }

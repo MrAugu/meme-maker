@@ -63,7 +63,7 @@ class ProfileCmd extends Command {
 => Total Posts: ${data.totalPosts}
 => Posts: \`${data.ownPosts.join("`, `")}\`
         `)
-        .setColor("#000000")
+        .setColor("#093F4A")
         .setTimestamp();
 
       reply(profileEmbed);
