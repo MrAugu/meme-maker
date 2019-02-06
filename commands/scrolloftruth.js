@@ -44,7 +44,7 @@ class ScrollCmd extends Command {
     topText = this.client.separateText(topText, 14, 20);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
-    const location = await this.client.textLocation(topText.length, 134, 225, false, true, 0, 0.5);
+    const location = await this.client.textLocation(topText.length, 134, 262, false, true, 0, 0.5);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
     const newMeme = new Canvas(528.7, 511.7)
       .addImage(image, 0, 0, 528.7, 511.7)
