@@ -3,10 +3,10 @@ const Discord = require("discord.js");
 const { Canvas } = require('canvas-constructor');
 const fsn = require('fs-nextra');
 
-class RewindCmd extends Command {
+class BunnyCmd extends Command {
   constructor (client) {
     super(client, {
-      name: "BunnyCmd",
+      name: "Bunny",
       description: "Makes a royal bunny time meme.",
       category: "Meme Maker",
       usage: "",
