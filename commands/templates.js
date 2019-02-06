@@ -1,4 +1,4 @@
-const emoji = require("emojis.json");
+const emoji = require("../base/emojis.json");
 const Command = require("../base/Command");
 const Discord = require ("discord.js");
 var i = 0;
