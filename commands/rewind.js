@@ -47,7 +47,7 @@ class RewindCmd extends Command {
     const location = await this.client.textLocation(topText.length, 280, 110, true, true, 0.001, 0.5);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 75%`);
     const newMeme = new Canvas(600, 500)
-      .addImage(image, 0, 0, 600, 500)
+      .addImage(image, 0, 0, 384, 434)
       .setColor("#000000")
       .setTextFont('34px Impact')
       .setTextAlign('center')
