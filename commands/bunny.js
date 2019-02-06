@@ -6,7 +6,7 @@ const fsn = require('fs-nextra');
 class BunnyCmd extends Command {
   constructor (client) {
     super(client, {
-      name: "Bunny",
+      name: "bunny",
       description: "Makes a royal bunny time meme.",
       category: "Meme Maker",
       usage: "",
