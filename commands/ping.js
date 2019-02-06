@@ -17,13 +17,13 @@ class PingCmd extends Command {
   }
 
   async run (message, args, level, reply) { // eslint-disable-line no-unused-vars
-    const m = await reply("**Pong!**");
+    const m = await reply(":ping_pong: **Pong!**");
     const cLatency = Math.round(this.client.ping);
     const tLatency = m.createdTimestamp - message.createdTimestamp;
     
     m.edit({embed: {
-	     color: 606026,
-         description: `:ping_pong:** It only took me **\`${tLatency}\`ms\n **Oh, and, my heartbeat is **\`${cLatency}\`ms!`
+	     color: 49307,
+         description: `** It only took me **\`${tLatency}\`ms\n**Oh, and, my heartbeat is **\`${cLatency}\`ms!`
                    }
           });
   }

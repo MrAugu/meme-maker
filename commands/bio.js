@@ -40,7 +40,7 @@ class BioCmd extends Command {
 
         await newProfile.save().catch(e => this.client.logger.error(e));
         return reply({embed: {
-	     color: 606026,
+	     color: 49307,
          description: `**Sucessfully** set your bio to \`${args.join(" ")}\`.`
                              }
                     });
@@ -49,7 +49,7 @@ class BioCmd extends Command {
       data.bio = args.join(" ");
       data.save().catch(e => this.client.logger.error(e));
       return reply({embed: {
-	     color: 606026,
+	     color: 49307,
          description: `**Sucessfully** set your bio to \`${args.join(" ")}\`.`
                              }
                     });
