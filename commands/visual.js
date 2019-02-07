@@ -25,11 +25,11 @@ class VisualCmd extends Command {
       var i = 1;
         
 		    const image = await fsn.readFile(`./templatessample/s (${i}).jpg`);
-            var title = fs.readFileSync('templates.txt').toString().split("\n");
-		
+            var titles = fs.readFileSync('templates.txt').toString().split("\n");
+	    	var title = titles[i]
         const embed = new Discord.RichEmbed()
             .setAuthor("Templates preview")
-            .setDescription(`command : **-${title[i]}**`)
+            .setDescription(`command : **-${title}**`)
 			.setImage(image)
             .setTimestamp()
             .setColor("#00c09b")
@@ -48,10 +48,10 @@ class VisualCmd extends Command {
               if (chosen === emoji.nex) {
 				  if( i === 59 ) i = 0;
 				i += 1;
-        
-		const embed2 = new Discord.RichEmbed()
+        var title = titles[i]
+        const embed2 = new Discord.RichEmbed()
             .setAuthor("Templates preview")
-            .setDescription(`command : **-${title[i]}**`)
+            .setDescription(`command : **-${title}**`)
 			.setImage(image)
             .setTimestamp()
             .setColor("#00c09b")
