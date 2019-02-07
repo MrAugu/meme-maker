@@ -22,7 +22,7 @@ class VisualCmd extends Command {
 
     async run (message,  client, args, level, reply) {
 
-       i = 1;
+      var i = 1;
         
 		    const image = await fsn.readFile(`./templatessample/s (${i}).jpg`);
             var title = fs.readFileSync('templates.txt').toString().split("\n");
