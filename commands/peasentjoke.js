@@ -3,11 +3,11 @@ const Discord = require("discord.js");
 const { Canvas } = require('canvas-constructor');
 const fsn = require('fs-nextra');
 
-class JobCmd extends Command {
+class Joke2Cmd extends Command {
   constructor (client) {
     super(client, {
-      name: "job",
-      description: "Makes a 'New Job' meme.",
+      name: "peasentjoke",
+      description: "Makes a 'this is a peasent joke' meme.",
       category: "Meme Maker",
       usage: "",
       enabled: true,
@@ -23,7 +23,7 @@ class JobCmd extends Command {
     const msg = await message.channel.send(`${this.client.config.emojis.loading} Preparing the setup for you.`);
     await msg.edit("Please answer following questions in order to make your meme. You can say `cancel` to stop the setup.");
 
-    let topText = await this.client.awaitReply(message, "Please tell me what makes you get the job ", 60000);
+    let topText = await this.client.awaitReply(message, "Please tell me what is the peasent joke' ", 60000);
     if (topText === false) {
       reply("Prompt timed out.");
       return msg.delete();
@@ -39,9 +39,9 @@ class JobCmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Please wait while printing your meme.`);
 
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
-    const image = await fsn.readFile("./templates/31.jpg");
+    const image = await fsn.readFile("./templates/32.jpg");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
-    topText = this.client.separateText(topText, 30, 40);
+    topText = this.client.separateText(topText, 34, 40);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
     const location = await this.client.textLocation(topText.length, 300, 80, true, true, 0.001, 0.5);
@@ -49,7 +49,7 @@ class JobCmd extends Command {
     const newMeme = new Canvas(600, 600)
       .addImage(image, 0, 0, 600, 600)
       .setColor("#000000")
-      .setTextFont('bold 25px Impact')
+      .setTextFont('bold 28px Impact')
       .setTextAlign('center')
       .addText(topText, location.from, location.to)
       .toBuffer();
@@ -57,8 +57,8 @@ class JobCmd extends Command {
     const attachment = new Discord.Attachment(newMeme, 'image.png');
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 100%`);
     await msg.delete();
-    message.channel.send("Your 'New Job' meme is ready:", attachment);
+    message.channel.send("Your 'this is a peasent joke' meme is ready:", attachment);
   }
 }
 
-module.exports = JobCmd;
+module.exports = Joke2Cmd;
