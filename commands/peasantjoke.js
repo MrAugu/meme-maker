@@ -6,8 +6,8 @@ const fsn = require('fs-nextra');
 class Joke2Cmd extends Command {
   constructor (client) {
     super(client, {
-      name: "peasentjoke",
-      description: "Makes a 'this is a peasent joke' meme.",
+      name: "peasantjoke",
+      description: "Makes a 'this is a peasant joke' meme.",
       category: "Meme Maker",
       usage: "",
       enabled: true,
@@ -23,7 +23,7 @@ class Joke2Cmd extends Command {
     const msg = await message.channel.send(`${this.client.config.emojis.loading} Preparing the setup for you.`);
     await msg.edit("Please answer following questions in order to make your meme. You can say `cancel` to stop the setup.");
 
-    let topText = await this.client.awaitReply(message, "Please tell me what is the peasent joke' ", 60000);
+    let topText = await this.client.awaitReply(message, "Please tell me what is the peasant joke' ", 60000);
     if (topText === false) {
       reply("Prompt timed out.");
       return msg.delete();
@@ -41,7 +41,7 @@ class Joke2Cmd extends Command {
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 10%`);
     const image = await fsn.readFile("./templates/32.jpg");
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 35%`);
-    topText = this.client.separateText(topText, 34, 40);
+    topText = this.client.separateText(topText,30, 40);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 45%`);
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 55%`);
     const location = await this.client.textLocation(topText.length, 300, 80, true, true, 0.001, 0.5);
@@ -49,7 +49,7 @@ class Joke2Cmd extends Command {
     const newMeme = new Canvas(600, 600)
       .addImage(image, 0, 0, 600, 600)
       .setColor("#000000")
-      .setTextFont('bold 28px Impact')
+      .setTextFont('bold 25px Impact')
       .setTextAlign('center')
       .addText(topText, location.from, location.to)
       .toBuffer();
@@ -57,7 +57,7 @@ class Joke2Cmd extends Command {
     const attachment = new Discord.Attachment(newMeme, 'image.png');
     await msg.edit(`${this.client.config.emojis.loading} Priniting your meme... 100%`);
     await msg.delete();
-    message.channel.send("Your 'this is a peasent joke' meme is ready:", attachment);
+    message.channel.send("Your 'this is a peasant joke' meme is ready:", attachment);
   }
 }
 
