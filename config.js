@@ -1,9 +1,9 @@
 const config = {
-  "token":  "NTE3NzY3NDUwMjQ3Mjk5MDcy.Dx41xw.W2WQIgYlhu067EzG76zg84Kd9Uw",
+  "token":  "NICE_TRY",
   "prefix": "-",
   "owner": "414764511489294347",
   "admins": ["270252850121146369"],
-  "mongo": "mongodb://bret:bret02@ds111455.mlab.com:11455/bret",
+  "mongo": "YOURE_CURIOUS_HUH",
   
   "emojis": {
     "loading": "<a:loader:542349946041663488>",
