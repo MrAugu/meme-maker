@@ -1,20 +1,20 @@
 const config = {
   "token":  "NICE_TRY",
   "prefix": "-",
-  "owner": "414764511489294347",
-  "admins": ["270252850121146369"],
+  "owner": "USER_ID",
+  "admins": [],
   "mongo": "YOURE_CURIOUS_HUH",
   
   "emojis": {
-    "loading": "<a:loader:542349946041663488>",
-    "fp": "<:fp:527540498693619728>",
+    "loading": "DICORD_EMOJI/UNICODE",
+    "fp": "DICORD_EMOJI/UNICODE",
 	"nex": "➡",
     "stp": "❌"
   },
 
   "channels": {
-    "postLogs": "",
-    "decisionLogs": ""
+    "postLogs": "CHANNEL_ID",
+    "decisionLogs": "CHANNEL_ID"
   },
 
   "colors": {
@@ -32,7 +32,7 @@ const config = {
       name: "Moderator",
       check: (message) => {
         try {
-          if (message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_GUILD") || message.member.hasPermission("BAN_MEMBERS") ||  message.member.roles.get(message.guild.settings.modRole) !== undefined) {
+          if (message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("MANAGE_GUILD") || message.member.hasPermission("BAN_MEMBERS")) {
             return true;
           } else {
             return false;
@@ -47,7 +47,7 @@ const config = {
       name: "Administrator", 
       check: (message) => {
         try {
-          if (message.member.hasPermission("ADMINISTRATOR") ||  message.member.roles.get(message.guild.settings.adminRole) !== undefined) {
+          if (message.member.hasPermission("ADMINISTRATOR")) {
             return true;
           } else {
             return false;
